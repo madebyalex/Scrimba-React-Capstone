@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import { Link, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -15,10 +18,14 @@ function App() {
 
       <Switch>
         <Route exact path='/'>
-          Home
+          <Home />
         </Route>
-        <Route path='/about'>About</Route>
-        <Route path='/contact'>Contact</Route>
+        <Route path='/about'>
+          <About />
+        </Route>
+        <Route path='/contact'>
+          <Contact />
+        </Route>
       </Switch>
     </>
   );
