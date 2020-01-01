@@ -4,6 +4,8 @@ Capstone project created by following the React Bootcamp course at [Scrimba](htt
 
 👉Currently in progress
 
+---
+
 ## Available Scripts
 
 In the project directory, you can run:
