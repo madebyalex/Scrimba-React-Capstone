@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Capstone app
+
+Capstone project created by following the React Bootcamp course at [Scrimba](https://scrimba.com/g/greact).
 
 ## Available Scripts
 
