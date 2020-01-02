@@ -1,30 +1,32 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import { Link, Switch, Route } from 'react-router-dom';
 
-function App() {
+// import { Context } from './Context';
+
+import Header from './components/Header';
+import Photos from './pages/Photos';
+import Cart from './pages/Cart';
+
+function App(props) {
+  // const { photosList } = useContext(Context);
+
+  // const photos = photosList.map(item => {
+  //   return <img src={item.url} alt={`Amazing something ${item.id}`} />;
+  // });
+
+  // console.log(photosList);
   return (
     <>
-      <h1>Capstone Project</h1>
-
-      <nav>
-        <Link to='/'>Home</Link>
-        <Link to='/about'>About</Link>
-        <Link to='/contact'>Contact</Link>
-      </nav>
+      <Header />
 
       <Switch>
         <Route exact path='/'>
-          <Home />
+          <Photos />
         </Route>
-        <Route path='/about'>
-          <About />
-        </Route>
-        <Route path='/contact'>
-          <Contact />
+
+        <Route path='/cart'>
+          <Cart />
         </Route>
       </Switch>
     </>
