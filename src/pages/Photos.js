@@ -10,7 +10,7 @@ function Photos(props) {
     <Image key={item.id} className={getClass(index)} img={item} />
   ));
 
-  console.log(photosList);
+  // console.log(photosList);
 
   return <main className='photos'>{photos}</main>;
 }

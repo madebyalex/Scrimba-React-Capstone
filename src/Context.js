@@ -13,14 +13,32 @@ function ContextProvider({ children }) {
       .then(response => response.json())
       .then(data => {
         setPhotosList(data);
-
-        // console.log(data);
       });
   }, []);
 
-  // setPhotosList(prevData => 'List #2');
+  function toggleFavorite(id) {
+    const updatedArr = photosList.map(photo => {
+      if (photo.id === id) {
+        console.log(photo.id);
+        // console.log(!photo.isFavorite);
 
-  return <Context.Provider value={{ photosList }}>{children}</Context.Provider>;
+        return {
+          ...photo,
+          isFavorite: !photo.isFavorite
+        };
+      }
+
+      return photo;
+    });
+
+    setPhotosList(updatedArr);
+  }
+
+  return (
+    <Context.Provider value={{ photosList, toggleFavorite }}>
+      {children}
+    </Context.Provider>
+  );
 }
 
 export { ContextProvider, Context };
