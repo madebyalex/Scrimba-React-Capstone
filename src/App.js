@@ -20,15 +20,17 @@ function App(props) {
     <>
       <Header />
 
-      <Switch>
-        <Route exact path='/'>
-          <Photos />
-        </Route>
+      <div className='page-wrap'>
+        <Switch>
+          <Route exact path='/'>
+            <Photos />
+          </Route>
 
-        <Route path='/cart'>
-          <Cart />
-        </Route>
-      </Switch>
+          <Route path='/cart'>
+            <Cart />
+          </Route>
+        </Switch>
+      </div>
     </>
   );
 }
