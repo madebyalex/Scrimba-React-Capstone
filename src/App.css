@@ -92,7 +92,7 @@ button.fav,
 button.buy {
   margin: 0;
   bottom: 0;
-  background: none rgba(0, 0, 0, 0.5);
+  background: none rgba(0, 0, 0, 0.56);
   border: none;
   line-height: 1;
   position: absolute;
@@ -117,7 +117,7 @@ button.fav {
 }
 
 .ri-heart-fill {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .ri-delete-bin-line,

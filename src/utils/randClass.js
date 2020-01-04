@@ -1,5 +1,3 @@
-import React from 'react';
-
 function getClass(i) {
   if (i % 5 === 0) {
     return 'big';

@@ -19,15 +19,27 @@ function Image({ className, img }) {
       onMouseLeave={hoveredOut}
       className={`${className} image-container`}
     >
-      {hovered && (
+      {hovered ? (
         <div className='top-panel'>
           <button onClick={() => toggleFavorite(img.id)} className='fav'>
-            <i className='ri-heart-line favorite'></i>
+            {img.isFavorite ? (
+              <i className='ri-heart-fill favorite'></i>
+            ) : (
+              <i className='ri-heart-line favorite'></i>
+            )}
           </button>
           <button className='buy'>
             <i className='ri-add-circle-line cart'></i>
           </button>
         </div>
+      ) : (
+        img.isFavorite && (
+          <div className='top-panel'>
+            <button onClick={() => toggleFavorite(img.id)} className='fav'>
+              <i className='ri-heart-fill favorite'></i>
+            </button>
+          </div>
+        )
       )}
 
       <img className='image-grid' src={img.url} alt='' />
