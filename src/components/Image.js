@@ -19,6 +19,8 @@ function Image({ className, img }) {
   function cartIcon() {
     const alreadyInCart = cartItems.some(el => el.id === img.id);
 
+    const test = 'Test';
+
     if (alreadyInCart) {
       return (
         <button className='buy' onClick={() => removeFromCart(img.id)}>
