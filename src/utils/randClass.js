@@ -4,6 +4,6 @@ function getClass(i) {
   } else if (i % 6 === 0) {
     return 'wide';
   }
-} 
+}
 
 export default getClass;
