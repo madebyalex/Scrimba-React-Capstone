@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../Context';
+import CartItem from '../components/CartItem';
 
 function Cart() {
   const { cartItems } = useContext(Context);
   const itemsArr = cartItems.map(item => (
-    <li key={item.id}>
-      <img src={item.url} alt='' />
-      <h4>{item.id}</h4>
-    </li>
+    <CartItem key={item.id} item={item} />
   ));
+
   return (
     <main className='cart-page'>
       <h1>Check out</h1>

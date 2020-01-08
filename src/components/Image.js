@@ -4,7 +4,9 @@ import { Context } from '../Context';
 
 function Image({ className, img }) {
   const [hovered, setHovered] = useState(false);
-  const { toggleFavorite, addToCart, cartItems } = useContext(Context);
+  const { toggleFavorite, cartItems, addToCart, removeFromCart } = useContext(
+    Context
+  );
 
   function hoveredIn() {
     setHovered(true);
@@ -19,7 +21,7 @@ function Image({ className, img }) {
 
     if (alreadyInCart) {
       return (
-        <button className='buy' onClick={() => addToCart(img)}>
+        <button className='buy' onClick={() => removeFromCart(img.id)}>
           <i className='ri-shopping-cart-fill cart'></i>
         </button>
       );

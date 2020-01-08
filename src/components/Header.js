@@ -6,24 +6,21 @@ function Header() {
   const { cartItems } = useContext(Context);
 
   function cartButton() {
-    console.log(cartItems);
-
     if (cartItems.length > 0) {
       return (
-        <button class='btn-cart'>
+        <button className='btn-cart'>
           <span className='badge'>{cartItems.length}</span>
           <i className='icon ri-shopping-cart-fill ri-fw ri-2x'></i>
         </button>
       );
     } else {
       return (
-        <button class='btn-cart'>
+        <button className='btn-cart'>
           <i className='icon ri-shopping-cart-line ri-fw ri-2x'></i>
         </button>
       );
     }
   }
-  console.log(cartItems);
 
   return (
     <header>

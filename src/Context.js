@@ -38,21 +38,24 @@ function ContextProvider({ children }) {
   function addToCart(newItem) {
     // const curItem = cartItems.find(el => (el.id = newItem.id));
 
-    const alreadyInCart = cartItems.some(el => el.id === newItem.id);
+    setCartItems(prevItems => [...prevItems, newItem]);
+  }
 
-    if (alreadyInCart) {
-      console.log('Already in the Cart!');
-      setCartItems(prevItems => prevItems.filter(item => item !== newItem));
-    } else {
-      setCartItems(prevItems => [...prevItems, newItem]);
-    }
+  function removeFromCart(id) {
+    setCartItems(prevItems => prevItems.filter(item => item.id !== id));
   }
 
   console.log(cartItems);
 
   return (
     <Context.Provider
-      value={{ photosList, toggleFavorite, cartItems, addToCart }}
+      value={{
+        photosList,
+        toggleFavorite,
+        cartItems,
+        addToCart,
+        removeFromCart
+      }}
     >
       {children}
     </Context.Provider>
