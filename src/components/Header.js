@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../Context';
 
 function Header() {
-  const { cartItems } = useContext(Context);
+  const { cartItems, paying, payingProcess } = useContext(Context);
 
   function cartButton() {
     if (cartItems.length > 0) {
@@ -22,10 +22,16 @@ function Header() {
     }
   }
 
+  function resetCart() {
+    if (paying === 'complete') {
+      payingProcess('reset');
+    }
+  }
+
   return (
     <header>
       <div className='page-wrap'>
-        <Link to='/'>
+        <Link onClick={resetCart} to='/'>
           <h2>
             <strong>Snap</strong>Photo
           </h2>

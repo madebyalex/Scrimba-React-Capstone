@@ -5,6 +5,7 @@ const Context = React.createContext();
 function ContextProvider({ children }) {
   const [photosList, setPhotosList] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [paying, setPaying] = useState(false);
 
   const url =
     'https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json';
@@ -45,7 +46,20 @@ function ContextProvider({ children }) {
     setCartItems(prevItems => prevItems.filter(item => item.id !== id));
   }
 
-  console.log(cartItems);
+  function payingProcess(orderNumber) {
+    if (orderNumber !== 'reset') {
+      setPaying(true);
+      setTimeout(function() {
+        console.log(`Your order #${orderNumber} was successfully placed. Yay!`);
+        setPaying('complete');
+        setCartItems([]);
+      }, 3000);
+    } else {
+      setPaying(false);
+    }
+  }
+
+  // console.log(cartItems);
 
   return (
     <Context.Provider
@@ -54,7 +68,9 @@ function ContextProvider({ children }) {
         toggleFavorite,
         cartItems,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        paying,
+        payingProcess
       }}
     >
       {children}

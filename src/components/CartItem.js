@@ -20,7 +20,7 @@ function CartItem({ item }) {
       <img src={item.url} alt='' />
       <h4>{item.id}</h4>
       <p className='price'>
-        <strong>$7.99</strong>
+        <strong className='item-price'>$7.99</strong>
       </p>
     </li>
   );
