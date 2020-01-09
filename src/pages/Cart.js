@@ -37,7 +37,7 @@ function Cart() {
         </>
       ) : paying !== 'complete' ? (
         <div className='align-center'>
-          <h2>Oh, there is no items yet. </h2>
+          <h3>Oh, there is no items yet. </h3>
           <p>
             Please <Link to='/'>go to the gallery</Link> and select something
             you like{' '}

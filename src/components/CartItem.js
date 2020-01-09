@@ -1,13 +1,19 @@
-import React, { useContext, useRef } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { Context } from '../Context';
 
 function CartItem({ item }) {
   const { removeFromCart } = useContext(Context);
   const cartItem = useRef();
 
+  const [hovered, setHovered] = useState(false);
+
+  const binIcon = hovered ? 'fill' : 'line';
+
   return (
     <li key={item.id} ref={cartItem}>
       <button
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         onClick={() => {
           cartItem.current.classList.add('removed');
 
@@ -15,7 +21,7 @@ function CartItem({ item }) {
         }}
         className='btn-remove'
       >
-        <i className='ri-delete-bin-line'></i>
+        <i className={`ri-delete-bin-${binIcon}`}></i>
       </button>
       <img src={item.url} alt='' />
       <h4>{item.id}</h4>
